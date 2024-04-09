@@ -1,5 +1,5 @@
 """
-URL configuration for Test project.
+URL configuration for smartproject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -15,12 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include #added include when creating urls.py in the home app. Include function will be used to pass the file to the url patterns as a string.
 
-
+#import files here from views.py so we have access to the function we created. 
+# from home import views # Getting rid of this when we create the urls.py in the the home app.
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('smart/', include('notes.urls')),
+    path('smart/', include('notes.urls')), 
 ]
